@@ -1,0 +1,224 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <style>
+        *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #513f98;
+}
+h1
+{
+    text-align: center;
+    color:  #d8caff;
+    margin-top: 30px;
+    font-size: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        to right,
+        #ef7777,
+        #b25555
+    );
+    left: -102px;
+    top: -85px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #76f6a7,
+        #5ea87a
+    );
+    right: -98px;
+    bottom: -132px;
+}
+.background2 .shape
+{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+#shape1:first-child
+{
+    background: linear-gradient(
+        to right,
+        #ef7777,
+        #b25555
+    );
+    left: 355px;
+    top: 35px;
+    
+}
+#shape2:last-child
+{
+    background: linear-gradient(
+        to right,
+        #76f6a7,
+        #5ea87a
+    );
+    right: 350px;
+    bottom: 55px;
+
+}
+.logform{
+    height: 550px;
+    width: 450px;
+    background-color: rgba(48, 21, 54, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 52%;
+    left: 50%;
+    border-radius: 0px;
+    backdrop-filter: blur(10px);
+    /* border: 2px solid rgba(255,255,255,0.1); */
+    box-shadow: 0 0 20px rgba(8, 7, 16, 0.366);
+    padding: 50px 35px;
+}
+form
+{
+    height: 1125px;
+    width: 40%;
+    background-color: rgba(48, 21, 54, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 80%;
+    left: 50%;
+    border-radius: 0px;
+    backdrop-filter: blur(10px);
+    /* border: 2px solid rgba(255,255,255,0.1); */
+    box-shadow: 0 0 20px rgba(8, 7, 16, 0.366);
+    padding: 50px 35px;
+}
+form *{
+    font-size: small;
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 47px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #d8caff;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 0px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #5a39b4;
+    color: #ffffff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+} -->
+.signinform
+{
+    /* height: fit-content; */
+    width: 100%;
+    font-size: 12px;
+}
+
+    </style>
+</head>
+
+<body>
+    <h1><strong>E-GADGET</strong></h1>
+    {%block login%}
+    {%endblock login%}
+</body>
+
+</html>

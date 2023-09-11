@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{%block login%}
+<div class="background2">
+    <div id="shape1" class="shape"></div>
+    <div id="shape2" class="shape"></div>
+</div>
+<form action="" method="post" enctype="multipart/form-data">
+    <h3>Sign Up</h3>
+    {%csrf_token%}
+    <div class="signinform">
+        {{form}}
+        <button>Sign Up</button>
+        <div class="social" style="color: #b69cfe;">
+            Already a user ? <a href="{% url 'home' %}" class="text-light"><strong
+                    style="color: rgb(255, 255, 255); margin-left: 5px;">Sign In</strong></a>
+        </div>
+    </div>
+</form>
+{%endblock login%}

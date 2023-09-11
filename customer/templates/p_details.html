@@ -1,0 +1,55 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1 class="text-center text-dark" style="background-color: #b69cfe; height: 55px; margin-top: 40px;">Products Details</h1>
+
+    <div class="row" style="margin-top: 45px;margin-right: 0px;">
+        <div class="col-5">
+            <img src="{{data.image.url}}" alt="image" width="80%" height="300px" style="margin-top: 58px;">
+        </div>
+        <div class="col" style="top: 70px; left: -80px;">
+            <ul class="list-group" style="font-size: 20px;">
+                <li class="list-group-item bg-primary"><strong class="text-light">{{data.name}}</strong></li>
+                <li class="list-group-item">{{data.category}}</li>
+                <li class="list-group-item">{{data.description}}</li>
+                <li class="list-group-item"><strong class="text-success">Rs : {{data.price}}/-</strong></li>
+                <li class="list-group-item">
+                    <a href="" class="btn btn-success" style="width: 20%; height: 42px;border-radius: 0px;"><strong>Buy Now</strong></a>
+                    <!-- <a href="" class="btn btn-info" style="margin-left: 15px;width: 10%;"></a> -->
+                    <button type="button" class="btn btn-info" style="width: 10%;margin-left: 15px;border-radius: 0px;" data-toggle="modal"
+                        data-target="#exampleModal">
+                        <span class="material-symbols-outlined" style="height: 24px;">
+                            <strong style="position: absolute; margin-top:2px;margin-left: -12px;">add_shopping_cart</strong>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="top: 50px; width: 30%; margin-left: 35%;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'acart' data.id %}" method="post">
+                        {%csrf_token%}
+                        <label for="">Add Quantity</label>
+                        <input type="number" name="qnty" class="form-control" id=""><br>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success" style="width: 30%;">Submit</button>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+            </div>
+        </div>
+    </div>
+{% endblock content %}
